@@ -93,7 +93,7 @@ def img_white2transparent(img):
     datas = img.getdata()
     new_data = []
     for item in datas:
-        if item[0] == 255 and item[1] == 255 and item[2] == 255:
+        if all(value == 255 for value in item)
             new_data.append((255, 255, 255, 0))
         else:
             new_data.append(item)
